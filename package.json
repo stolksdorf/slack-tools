@@ -1,0 +1,54 @@
+{
+  "name": "emoji-maker",
+  "version": "1.0.0",
+  "description": "Text-based Emoji maker for Slack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vitreum --static",
+    "dev": "vitreum --dev --static",
+    "postinstall": "npm run build",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stolksdorf/emoji-maker.git"
+  },
+  "keywords": [
+    "slack",
+    "emoji"
+  ],
+  "author": "stolksdorf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stolksdorf/emoji-maker/issues"
+  },
+  "homepage": "https://github.com/stolksdorf/emoji-maker#readme",
+  "vitreum": {
+    "targets": [
+      "client/main/main.jsx"
+    ],
+    "template": "client/html.template.js",
+    "rootPath": "/emoji-maker",
+    "paths": {
+      "build": "./docs"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "create-react-class": "^15.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "vitreum": "^5.6.0"
+  }
+}

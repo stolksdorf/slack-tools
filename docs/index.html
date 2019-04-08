@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Doctype HTML5 -->
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+		<link href='//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css' />
+
+		<link rel='icon' type='image/png' href='/assets/favicon.png' />
+		<link rel='stylesheet' type='text/css' href='/emoji-makermain/bundle.css' />
+		
+	</head>
+	<body><main id='vitreum-root'><div class="Main" data-reactroot=""><h1>Slack Text Emoji Maker</h1><div class="controls"><div><label>Text</label><textarea rows="3">Why
+Tho</textarea></div><div><label>Size</label><input type="range" min="80" max="150" value="100"/></div><div><label>Spacing</label><input type="range" min="60" max="100" value="75"/></div></div><div class="render"><canvas width="200" height="200"></canvas><div class="example">This is it used in text. <img class="sample" src=""/> How cool is that?</div></div><div class="instructions"><h3>instructions</h3><ol><li>Customize your text emoji</li><li><a href="" target="_blank" download="Why_Tho.png">Download It</a></li><li><a href="https://coolsville.slack.com/customize/emoji" target="_blank">Add Emoji to Slack</a></li></ol></div></div></main></body>
+	<script src='/emoji-makerlibs.js'></script>
+	<script src='/emoji-makermain/bundle.js'></script>
+	<script>
+		(function(){
+			require('react-dom').hydrate(
+				require('react').createElement(main, undefined),
+				document.getElementById('vitreum-root')
+			);
+		})();
+	</script>
+</html>

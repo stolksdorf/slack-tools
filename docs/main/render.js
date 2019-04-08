@@ -29,12 +29,12 @@ module.exports = (props, opts={})=>{
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css' />
 
 		<link rel='icon' type='image/png' href='/assets/favicon.png' />
-		<link rel='stylesheet' type='text/css' href='/emoji-makermain/bundle.css' />
+		<link rel='stylesheet' type='text/css' href='/emoji-maker/main/bundle.css' />
 		${headtags}
 	</head>
 	<body><main id='vitreum-root'>${component}</main></body>
-	<script src='/emoji-makerlibs.js'></script>
-	<script src='/emoji-makermain/bundle.js'></script>
+	<script src='/emoji-maker/libs.js'></script>
+	<script src='/emoji-maker/main/bundle.js'></script>
 	<script>
 		(function(){
 			require('react-dom').hydrate(

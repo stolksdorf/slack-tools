@@ -46,9 +46,8 @@
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "create-react-class": "^15.6.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "vitreum": "^5.6.1"
+    "vitreum": "^5.6.2"
   }
 }

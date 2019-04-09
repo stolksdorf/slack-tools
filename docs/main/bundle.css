@@ -1,1 +1,15 @@
-.Main canvas{height:200px;width:200px;border:1px solid black}.Main textarea{resize:none}.Main img.sample{vertical-align:middle;height:22px;width:22px}
+/** client\main\main.less **/
+.Main canvas {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+.Main textarea {
+  resize: none;
+}
+.Main img.sample {
+  vertical-align: middle;
+  height: 22px;
+  width: 22px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L0Ryb3Bib3gvcm9vdC9Qcm9ncmFtbWluZy9KYXZhc2NyaXB0L2Vtb2ppLW1ha2VyL2NsaWVudC9tYWluL21haW4ubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0EsS0FDQztFQUNDLGFBQUE7RUFDQSxZQUFBO0VBQ0EsdUJBQUE7O0FBSkYsS0FNQztFQUNDLFlBQUE7O0FBUEYsS0FTQyxJQUFHO0VBQ0Ysc0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQSIsInNvdXJjZXNDb250ZW50IjpbIlxuLk1haW57XG5cdGNhbnZhc3tcblx0XHRoZWlnaHQgOiAyMDBweDtcblx0XHR3aWR0aCAgOiAyMDBweDtcblx0XHRib3JkZXIgOiAxcHggc29saWQgYmxhY2s7XG5cdH1cblx0dGV4dGFyZWF7XG5cdFx0cmVzaXplIDogbm9uZTtcblx0fVxuXHRpbWcuc2FtcGxle1xuXHRcdHZlcnRpY2FsLWFsaWduIDogbWlkZGxlO1xuXHRcdGhlaWdodCAgICAgICAgIDogMjJweDtcblx0XHR3aWR0aCAgICAgICAgICA6IDIycHg7XG5cdH1cbn0iXX0= */

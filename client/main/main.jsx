@@ -1,10 +1,13 @@
 require('./main.less');
 const React = require('react');
 
-const {Title, Favicon, Structured} = require('vitreum/headtags');
+const {Title, Favicon} = require('vitreum/headtags');
 
 
 const HEIGHT = 200, WIDTH = 200;
+
+
+
 
 function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	const getMaxSize = (lines, size=70)=>{
@@ -54,6 +57,7 @@ function Main({ ...props }){
 
 	return <div className={`Main`} {...props}>
 		<Title>Emoji Maker</Title>
+		<Favicon href={dataURL} />
 
 
 		<h1>Slack Text Emoji Maker</h1>
@@ -78,7 +82,7 @@ function Main({ ...props }){
 		<div className='render'>
 			<TextCanvas {...{text, size, lineheight, setDataURL, setSize}} />
 			<div className='example'>
-				This is it used in text. <img className='sample' src={dataURL} /> How cool is that?
+				This is it used in text. <img className='sample' src={dataURL} /> Also the tab icon is updated.
 			</div>
 		</div>
 

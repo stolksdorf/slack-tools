@@ -69,14 +69,16 @@ function Main({ ...props }){
 			</div>
 			<div>
 				<label>Size</label>
-				<input type='range' min={80} max={200} value={size} onChange={(evt)=>setSize(evt.target.value)} />
+				<input type='range' min={80} max={250} value={size} onChange={(evt)=>setSize(evt.target.value)} />
 				{size}
+				<button onClick={()=>setSize(150)}>Standard Size</button>
 			</div>
 			<div>
 				<label>Spacing</label>
 				<input type='range' min={40} max={120} value={lineheight} onChange={(evt)=>setLineheight(evt.target.value)} />
 				{lineheight}
 			</div>
+
 		</div>
 
 		<div className='render'>

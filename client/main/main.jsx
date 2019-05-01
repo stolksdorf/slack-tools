@@ -105,21 +105,14 @@ function TextTransform(props){
 	const divider = <br />
 	return <div className='TextTransform'>
 		<h2>Text Transform</h2>
-		<textarea onChange={(evt)=>setText(evt.target.value)} value={text} />
-
-		<textarea readOnly value={Object
-				.values(transforms)
-				.map((fn)=>fn(text))
-				.join('\n\n')
-
-		} />
-
 		<div className='transforms'>
-			{Object
-				.values(transforms)
-				.map((fn)=>fn(text))
-				.map((text, idx)=><div key={idx}>{text}</div>)
-			}
+			<textarea onChange={(evt)=>setText(evt.target.value)} value={text} />
+
+			<textarea readOnly value={Object
+					.values(transforms)
+					.map((fn)=>fn(text))
+					.join('\n\n')
+			} />
 		</div>
 	</div>
 }

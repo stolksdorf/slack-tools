@@ -24,17 +24,17 @@ module.exports = (props, opts={})=>{
 	<head>
 		<meta charset='utf-8'>
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-32" />
 
 		<link href='//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css' />
 
-		<link rel='icon' type='image/png' href='/assets/favicon.png' />
-		<link rel='stylesheet' type='text/css' href='/emoji-maker/main/bundle.css' />
+		<link rel='stylesheet' type='text/css' href='/slack-tools/main/bundle.css' />
 		${headtags}
 	</head>
 	<body><main id='vitreum-root'>${component}</main></body>
-	<script src='/emoji-maker/libs.js'></script>
-	<script src='/emoji-maker/main/bundle.js'></script>
+	<script src='/slack-tools/libs.js'></script>
+	<script src='/slack-tools/main/bundle.js'></script>
 	<script>
 		(function(){
 			require('react-dom').hydrate(

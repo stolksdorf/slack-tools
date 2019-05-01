@@ -1,7 +1,7 @@
 {
-  "name": "emoji-maker",
+  "name": "slack-tools",
   "version": "1.0.0",
-  "description": "Text-based Emoji maker for Slack",
+  "description": "git@github.com:stolksdorf/slack-tools.git",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stolksdorf/emoji-maker.git"
+    "url": "git+https://github.com/stolksdorf/slack-tools.git"
   },
   "keywords": [
     "slack",
@@ -21,15 +21,15 @@
   "author": "stolksdorf",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stolksdorf/emoji-maker/issues"
+    "url": "https://github.com/stolksdorf/slack-tools/issues"
   },
-  "homepage": "https://github.com/stolksdorf/emoji-maker#readme",
+  "homepage": "https://github.com/stolksdorf/slack-tools#readme",
   "vitreum": {
     "targets": [
       "client/main/main.jsx"
     ],
     "template": "client/html.template.js",
-    "rootPath": "/emoji-maker",
+    "rootPath": "/slack-tools",
     "paths": {
       "build": "./docs"
     }

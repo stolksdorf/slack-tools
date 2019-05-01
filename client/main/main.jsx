@@ -1,13 +1,11 @@
 require('./main.less');
 const React = require('react');
 
-const {Title, Favicon} = require('vitreum/headtags');
+const {Title} = require('vitreum/headtags');
+
 
 
 const HEIGHT = 200, WIDTH = 200;
-
-
-
 
 function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	const getMaxSize = (lines, size=70)=>{
@@ -45,8 +43,10 @@ function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 
 }
 
+const {Favicon} = require('vitreum/headtags');
 
-function Main({ ...props }){
+function EmojiMaker(props){
+
 	const [text, setText] = React.useState('Yes');
 	const [size, setSize] = React.useState(150);
 	const [lineheight, setLineheight] = React.useState(75);
@@ -54,13 +54,10 @@ function Main({ ...props }){
 	const [dataURL, setDataURL] = React.useState('');
 
 
-
-	return <div className={`Main`} {...props}>
-		<Title>Emoji Maker</Title>
+	return <div className='EmojiMaker'>
 		<Favicon href={dataURL} />
 
-
-		<h1>Slack Text Emoji Maker</h1>
+		<h2>Slack Text Emoji Maker</h2>
 
 		<div className='controls'>
 			<div>
@@ -96,7 +93,52 @@ function Main({ ...props }){
 				<li><a href='https://coolsville.slack.com/customize/emoji' target='_blank'>Add Emoji to Slack</a></li>
 			</ol>
 		</div>
+	</div>
+}
 
+
+///////////////////////////
+
+const transforms = require('./text.transforms.js');
+function TextTransform(props){
+	const [text, setText] = React.useState('oh hello.');
+	const divider = <br />
+	return <div className='TextTransform'>
+		<h2>Text Transform</h2>
+		<textarea onChange={(evt)=>setText(evt.target.value)} value={text} />
+
+		<textarea readOnly value={Object
+				.values(transforms)
+				.map((fn)=>fn(text))
+				.join('\n\n')
+
+		} />
+
+		<div className='transforms'>
+			{Object
+				.values(transforms)
+				.map((fn)=>fn(text))
+				.map((text, idx)=><div key={idx}>{text}</div>)
+			}
+		</div>
+	</div>
+}
+
+
+
+//////////////////
+
+
+function Main({ ...props }){
+
+	return <div className={`Main`} {...props}>
+		<Title>Slack Tools</Title>
+		<h1>Slack Tools</h1>
+		<hr />
+
+		<TextTransform />
+		<hr />
+		<EmojiMaker />
 	</div>;
 };
 

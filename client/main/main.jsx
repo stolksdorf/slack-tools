@@ -97,16 +97,17 @@ function EmojiMaker(props){
 }
 
 
-///////////////////////////
+/*****************/
 
 const transforms = require('./text.transforms.js');
 function TextTransform(props){
-	const [text, setText] = React.useState('oh hello.');
-	const divider = <br />
+	const [text, setText] = React.useState('');
+	const divider = <br />;
+
 	return <div className='TextTransform'>
 		<h2>Text Transform</h2>
 		<div className='transforms'>
-			<textarea onChange={(evt)=>setText(evt.target.value)} value={text} />
+			<textarea onChange={(evt)=>setText(evt.target.value)} value={text} autoFocus onFocus="this.select();" />
 
 			<textarea readOnly value={Object
 					.values(transforms)
@@ -128,7 +129,6 @@ function Main({ ...props }){
 		<Title>Slack Tools</Title>
 		<h1>Slack Tools</h1>
 		<hr />
-
 		<TextTransform />
 		<hr />
 		<EmojiMaker />

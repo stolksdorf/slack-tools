@@ -113,13 +113,14 @@ function EmojiMaker(props) {
     href: "https://coolsville.slack.com/customize/emoji",
     target: "_blank"
   }, "Add Emoji to Slack")))));
-} ///////////////////////////
+}
+/*****************/
 
 
 const transforms = require('./text.transforms.js');
 
 function TextTransform(props) {
-  const [text, setText] = React.useState('oh hello.');
+  const [text, setText] = React.useState('');
   const divider = React.createElement("br", null);
   return React.createElement("div", {
     className: "TextTransform"
@@ -127,7 +128,9 @@ function TextTransform(props) {
     className: "transforms"
   }, React.createElement("textarea", {
     onChange: evt => setText(evt.target.value),
-    value: text
+    value: text,
+    autoFocus: true,
+    onFocus: "this.select();"
   }), React.createElement("textarea", {
     readOnly: true,
     value: Object.values(transforms).map(fn => fn(text)).join('\n\n')

@@ -34,6 +34,7 @@ module.exports = {
 	fullwidth,
 	old_timey,
 	fancy,
+	smallcaps,
 	clapback : (text)=>`👏 ${text.split(' ').join(' 👏 ')} 👏`,
 	goofy : (text)=>text.toLowerCase().split('').map((char, idx)=>idx%2==0?char:char.toUpperCase()).join(''),
 	song: (text)=>`🎵${italics(text)}🎵`,

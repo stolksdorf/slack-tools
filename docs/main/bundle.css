@@ -1,1 +1,24 @@
-.Main .TextTransform textarea{font-size:1.5em;height:400px;resize:none;width:49%}.Main .TextTransform .transforms>div{margin-bottom:1em}.Main .EmojiMaker canvas{height:200px;width:200px;border:1px solid black}.Main .EmojiMaker textarea{resize:none}.Main .EmojiMaker img.sample{vertical-align:middle;height:22px;width:22px}
+/** client\main\main.less **/
+.Main .TextTransform textarea {
+  font-size: 1.5em;
+  height: 400px;
+  resize: none;
+  width: 49%;
+}
+.Main .TextTransform .transforms > div {
+  margin-bottom: 1em;
+}
+.Main .EmojiMaker canvas {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+.Main .EmojiMaker textarea {
+  resize: none;
+}
+.Main .EmojiMaker img.sample {
+  vertical-align: middle;
+  height: 22px;
+  width: 22px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6L0Ryb3Bib3gvcm9vdC9Qcm9ncmFtbWluZy9KYXZhc2NyaXB0L3NsYWNrLXRvb2xzL2NsaWVudC9tYWluL21haW4ubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0EsS0FFQyxlQUNDO0VBQ0MsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLFVBQUE7O0FBR0EsS0FSRixlQU9DLFlBQ0U7RUFDQSxrQkFBQTs7QUFYSixLQWlCQyxZQUNDO0VBQ0MsYUFBQTtFQUNBLFlBQUE7RUFDQSx1QkFBQTs7QUFyQkgsS0FpQkMsWUFNQztFQUNDLFlBQUE7O0FBeEJILEtBaUJDLFlBU0MsSUFBRztFQUNGLHNCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJcbi5NYWlue1xuXG5cdC5UZXh0VHJhbnNmb3Jte1xuXHRcdHRleHRhcmVhe1xuXHRcdFx0Zm9udC1zaXplOjEuNWVtO1xuXHRcdFx0aGVpZ2h0IDo0MDBweDtcblx0XHRcdHJlc2l6ZTpub25lO1xuXHRcdFx0d2lkdGg6IDQ5JTtcblx0XHR9XG5cdFx0LnRyYW5zZm9ybXN7XG5cdFx0XHQmPmRpdntcblx0XHRcdFx0bWFyZ2luLWJvdHRvbTogMWVtO1xuXHRcdFx0fVxuXHRcdH1cblxuXHR9XG5cblx0LkVtb2ppTWFrZXJ7XG5cdFx0Y2FudmFze1xuXHRcdFx0aGVpZ2h0IDogMjAwcHg7XG5cdFx0XHR3aWR0aCAgOiAyMDBweDtcblx0XHRcdGJvcmRlciA6IDFweCBzb2xpZCBibGFjaztcblx0XHR9XG5cdFx0dGV4dGFyZWF7XG5cdFx0XHRyZXNpemUgOiBub25lO1xuXHRcdH1cblx0XHRpbWcuc2FtcGxle1xuXHRcdFx0dmVydGljYWwtYWxpZ24gOiBtaWRkbGU7XG5cdFx0XHRoZWlnaHQgICAgICAgICA6IDIycHg7XG5cdFx0XHR3aWR0aCAgICAgICAgICA6IDIycHg7XG5cdFx0fVxuXHR9XG59Il19 */

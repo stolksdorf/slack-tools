@@ -1,4 +1,4 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.main = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({"/Users/jaredtyler/hackedin/slack-tools/client/main/main.jsx":[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.main = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({"C:\\Dropbox\\root\\Programming\\Javascript\\slack-tools\\client\\main\\main.jsx":[function(require,module,exports){
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 require('./main.less');
@@ -183,7 +183,14 @@ module.exports = {
   smallcaps,
   clapback: text => `👏 ${text.split(' ').join(' 👏 ')} 👏`,
   goofy: text => text.toLowerCase().split('').map((char, idx) => idx % 2 == 0 ? char : char.toUpperCase()).join(''),
-  song: text => `🎵${italics(text)}🎵` // cthulu : (text)=>{
+  song: text => `🎵${italics(text)}🎵`,
+  wallguy: text => {
+    return `┻┳|
+┳┻| _
+┻┳| •.•)  ${text}
+┳┻|⊂ﾉ
+┻┳|`;
+  } // cthulu : (text)=>{
   // 	const chunk = Math.floor(text.length/4);
   // 	console.log(chunk);
   // 	console.log(text.substr(chunk*0,chunk))
@@ -201,5 +208,5 @@ module.exports = {
   // alert: +3
 
 };
-},{"runes":undefined}]},{},[])("/Users/jaredtyler/hackedin/slack-tools/client/main/main.jsx")
+},{"runes":undefined}]},{},[])("C:\\Dropbox\\root\\Programming\\Javascript\\slack-tools\\client\\main\\main.jsx")
 });

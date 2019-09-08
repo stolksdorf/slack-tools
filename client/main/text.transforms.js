@@ -39,6 +39,14 @@ module.exports = {
 	goofy : (text)=>text.toLowerCase().split('').map((char, idx)=>idx%2==0?char:char.toUpperCase()).join(''),
 	song: (text)=>`🎵${italics(text)}🎵`,
 
+	wallguy: (text)=>{
+		return`┻┳|
+┳┻| _
+┻┳| •.•)  ${text}
+┳┻|⊂ﾉ
+┻┳|`
+	}
+
 	// cthulu : (text)=>{
 	// 	const chunk = Math.floor(text.length/4);
 	// 	console.log(chunk);

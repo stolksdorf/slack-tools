@@ -227,7 +227,6 @@ module.exports = {
     let res = [];
     res = text.split('').reduce((acc, letter) => {
       const lastTwoLetters = acc.slice(-1) + letter;
-      console.log(lastTwoLetters);
 
       if (Ligatures[lastTwoLetters]) {
         acc.pop();

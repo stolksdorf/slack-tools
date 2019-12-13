@@ -9,7 +9,7 @@ const HEIGHT = 200, WIDTH = 200;
 
 function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	const getMaxSize = (lines, size=70)=>{
-		ctx.font = `bold ${size + 1}px Calibri`;
+		ctx.font = `bold ${size + 1}px Calibri,Roboto,Verdana,Arial`;
 		const biggest = Math.max(...lines.map((text)=>ctx.measureText(text).width))
 		if(biggest >= WIDTH) return size;
 		return getMaxSize(lines, size+1);
@@ -24,7 +24,7 @@ function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	if(ctx){
 		ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
 
-		ctx.font = `bold ${size}px Calibri`;
+		ctx.font = `bold ${size}px Calibri,Roboto,Verdana,Arial`;
 		ctx.fillStyle = '#000';
 		ctx.textBaseline='middle';
 
@@ -107,7 +107,7 @@ function TextTransform(props){
 	return <div className='TextTransform'>
 		<h2>Text Transform</h2>
 		<div className='transforms'>
-			<textarea onChange={(evt)=>setText(evt.target.value)} value={text} autoFocus onFocus="this.select();" />
+			<textarea onChange={(evt)=>setText(evt.target.value)} value={text} autoFocus />
 
 			<textarea readOnly value={Object
 					.values(transforms)

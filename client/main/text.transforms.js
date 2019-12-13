@@ -13,6 +13,7 @@ const createMap = (string)=>{
 	}
 }
 
+const pluck = (arr)=>arr[Math.floor(Math.random()*arr.length)];
 
 
 const tiny = createMap(`⁰¹²³⁴⁵⁶⁷⁸⁹ᵠʷᵉʳᵗʸᵘᶦᵒᵖᵃˢᵈᶠᵍʰʲᵏˡᶻˣᶜᵛᵇⁿᵐᵠᵂᴱᴿᵀʸᵁᴵᴼᴾᴬˢᴰᶠᴳᴴᴶᴷᴸᶻˣᶜⱽᴮᴺᴹ\`⁻⁼[]\\;',./~_⁺{}|:"<>ˀᵎ@#$%^&*⁽⁾`);
@@ -29,6 +30,47 @@ const cthulu4 = createMap(`0̸̯͍̲͖̠̩̠̯̗͒̐̈̽̉͂̎̚͝ͅ1̵̿͌͒̉�
 
 
 
+const Ligatures = {
+	oe: 'œ',
+	hu: 'ƕ',
+	Hu: 'Ƕ',
+	ue: 'ᵫ',
+	st: 'ﬆ',
+	ts: 'ʦ',
+	aa: 'ꜳ',
+	ao: 'ꜵ',
+	au: 'ꜷ',
+	av: 'ꜹ',
+	oo: 'ꝏ',
+	vy: 'ꝡ',
+	et: '🙰',
+	ay: 'ꜽ',
+	ls: 'ʪ',
+	ae: 'æ',
+	Ae: 'Æ',
+};
+
+const Accents = {
+	A : ['A','À','Á','Â','Ã','Ä'],
+	a : ['a','à','á','â','ã','ä'],
+
+	E : ['E','È','É','Ê','Ë'],
+	e : ['e','è','é','ê','ë'],
+
+	i:['i','ì','í','î','ï'],
+	I:['I','Ì','Í','Î','Ï'],
+
+	O : ['O','Ò','Ó','Ô','Õ','Ö'],
+	o : ['o','ò','ó','ô','õ','ö'],
+
+	U: ['U','Ù','Ú','Û','Ü'],
+	u: ['u','ù','ú','û','ü'],
+};
+
+
+
+
+
 module.exports = {
 	tiny,
 	fullwidth,
@@ -37,7 +79,7 @@ module.exports = {
 	smallcaps,
 	clapback : (text)=>`👏 ${text.split(' ').join(' 👏 ')} 👏`,
 	goofy : (text)=>text.toLowerCase().split('').map((char, idx)=>idx%2==0?char:char.toUpperCase()).join(''),
-	song: (text)=>`🎵${italics(text)}🎵`,
+	//song: (text)=>`🎵${italics(text)}🎵`,
 
 	wallguy: (text)=>{
 		return`┻┳|
@@ -45,6 +87,24 @@ module.exports = {
 ┻┳| •.•)  ${text}
 ┳┻|⊂ﾉ
 ┻┳|`
+	},
+	kellenSpæk : (text)=>{
+		let res = [];
+		res = text.split('').reduce((acc, letter)=>{
+			const lastTwoLetters = acc.slice(-1) + letter;
+			if(Ligatures[lastTwoLetters]){
+				acc.pop();
+				letter = Ligatures[lastTwoLetters]
+			}
+			return acc.concat(letter);
+		}, []);
+
+		res = res.reduce((acc, letter)=>{
+			if(Accents[letter]) letter = pluck(Accents[letter]);
+			return acc.concat(letter);
+		}, []);
+
+		return res.join('');
 	}
 
 	// cthulu : (text)=>{

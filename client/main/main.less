@@ -1,23 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800|Roboto+Condensed|Ubuntu&display=swap');
 
 
 .Main{
 
+	.group{
+		display: flex;
+		justify-content: space-around;
+		&>*{
+			//border: red solid 1px;
+			padding : 0px 30px;
+		}
+	}
+
 	.TextTransform{
+		//border-right: black 5px solid;
 		textarea{
 			font-size:1.5em;
-			height :600px;
+
 			resize:none;
-			width: 49%;
+			//width: 49%;
+			width: 100%;
 		}
+
+		.textEntry{
+			height :100px;
+		}
+
+
 		.transforms{
-			&>div{
-				margin-bottom: 1em;
+			&>*{
+				vertical-align: top;
+				padding : 5px 0px;
+				input{
+					font-size: 1.5em;
+				}
+				button{
+					line-height : 100%;
+					padding : 8px 0px;
+				}
 			}
+
 		}
+
+		// .result{
+		// 	height :600px;
+		// }
+
+		// .transforms{
+		// 	&>div{
+		// 		margin-bottom: 1em;
+		// 	}
+		// }
 
 	}
 
@@ -34,6 +70,25 @@
 			vertical-align : middle;
 			height         : 22px;
 			width          : 22px;
+		}
+
+		.controls{
+			label{
+				width : 60px;
+				display: inline-block;
+			}
+		}
+
+		.example{
+			padding: 10px;
+
+			border: rgba(0,0,0,0.3) solid 1px;
+
+			&.dark{
+				background-color : #111;
+				color : white;
+
+			}
 		}
 	}
 }

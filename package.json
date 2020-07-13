@@ -1,6 +1,6 @@
 {
   "name": "slack-tools",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "git@github.com:stolksdorf/slack-tools.git",
   "main": "app.js",
   "scripts": {

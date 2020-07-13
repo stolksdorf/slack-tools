@@ -4,6 +4,7 @@ const React = require('react');
 const {Title} = require('vitreum/headtags');
 
 
+const pckg = require('../../package.json');
 
 const HEIGHT = 200, WIDTH = 200;
 
@@ -210,8 +211,8 @@ function TextTransform(props){
 function Main({ ...props }){
 
 	return <div className={`Main`} {...props}>
-		<Title>Slack Tools</Title>
-		<h1>Slack Tools</h1>
+		<Title>Slack Tools v{pckg.version}</Title>
+		<h1>Slack Tools v{pckg.version}</h1>
 
 		<hr />
 		<div className='group'>

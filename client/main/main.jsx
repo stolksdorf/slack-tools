@@ -9,7 +9,7 @@ const HEIGHT = 200, WIDTH = 200;
 
 function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	const getMaxSize = (lines, size=70)=>{
-		ctx.font = `bold ${size + 1}px Ubuntu, 'Roboto Condensed',Roboto,Verdana,Arial, sans serif`;
+		ctx.font = `800 ${size}px Montserrat`;
 		const biggest = Math.max(...lines.map((text)=>ctx.measureText(text).width))
 		if(biggest >= WIDTH) return size;
 		return getMaxSize(lines, size+1);
@@ -41,19 +41,68 @@ function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
 
 			ctx.shadowColor = "rgba(255,255,255)"
-			ctx.shadowBlur = 120;
+			ctx.shadowBlur = 80;
 			ctx.fillText(line,width, height);
 		});
 
 		//draw smol shadow
+		// lines.map((line, idx)=>{
+		// 	const width = (WIDTH - ctx.measureText(line).width)/2;
+		// 	const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
+
+		// 	ctx.shadowColor = "rgba(255,255,255)"
+		// 	ctx.shadowBlur = 20;
+		// 	ctx.fillText(line,width, height);
+		// });
+
+
+
+
+
 		lines.map((line, idx)=>{
 			const width = (WIDTH - ctx.measureText(line).width)/2;
 			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
 
 			ctx.shadowColor = "rgba(255,255,255)"
-			ctx.shadowBlur = 40;
+			ctx.shadowBlur = 10;
+			ctx.shadowOffsetX = 3;
+			ctx.shadowOffsetY = 3;
 			ctx.fillText(line,width, height);
 		});
+		lines.map((line, idx)=>{
+			const width = (WIDTH - ctx.measureText(line).width)/2;
+			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
+
+			ctx.shadowColor = "rgba(255,255,255)"
+			ctx.shadowBlur = 10;
+			ctx.shadowOffsetX = -3;
+			ctx.shadowOffsetY = 3;
+			ctx.fillText(line,width, height);
+		});
+		lines.map((line, idx)=>{
+			const width = (WIDTH - ctx.measureText(line).width)/2;
+			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
+
+			ctx.shadowColor = "rgba(255,255,255)"
+			ctx.shadowBlur = 10;
+			ctx.shadowOffsetX = 3;
+			ctx.shadowOffsetY = -3;
+			ctx.fillText(line,width, height);
+		});
+		lines.map((line, idx)=>{
+			const width = (WIDTH - ctx.measureText(line).width)/2;
+			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
+
+			ctx.shadowColor = "rgba(255,255,255)"
+			ctx.shadowBlur = 10;
+			ctx.shadowOffsetX = -3;
+			ctx.shadowOffsetY = -3;
+			ctx.fillText(line,width, height);
+		});
+
+
+
+
 
 		//draw text
 		lines.map((line, idx)=>{

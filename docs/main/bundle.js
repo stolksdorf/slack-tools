@@ -20,7 +20,7 @@ function TextCanvas({
   setSize
 }) {
   const getMaxSize = (lines, size = 70) => {
-    ctx.font = `bold ${size + 1}px Calibri,Roboto,Verdana,Arial`;
+    ctx.font = `bold ${size + 1}px Ubuntu, 'Roboto Condensed',Roboto,Verdana,Arial, sans serif`;
     const biggest = Math.max(...lines.map(text => ctx.measureText(text).width));
     if (biggest >= WIDTH) return size;
     return getMaxSize(lines, size + 1);
@@ -37,7 +37,7 @@ function TextCanvas({
 
   if (ctx) {
     ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
-    ctx.font = `bold ${size}px Calibri,Roboto,Verdana,Arial`;
+    ctx.font = `bold ${size}px Ubuntu, 'Roboto Condensed',Roboto,Verdana,Arial, sans serif`;
     ctx.fillStyle = '#000';
     ctx.textBaseline = 'middle';
     const lines = text.split('\n');

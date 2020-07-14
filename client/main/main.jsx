@@ -2,34 +2,41 @@ require('./main.less');
 const React = require('react');
 
 const {Title} = require('vitreum/headtags');
-
-
 const pckg = require('../../package.json');
+
 
 const HEIGHT = 200, WIDTH = 200;
 
+//const test = require('./calibri.ttf');
+//console.log(test)
+
+
 function TextCanvas({text, size, lineheight, setDataURL, setSize}){
+	//const Font = `bold ${size}px Ubuntu, 'Roboto Condensed',Roboto,Verdana,Arial, sans serif`;
+	//const Font = `bold ${size}px Roboto, Comic sans`;
+	//const Font = `bold ${size}px Calibri`;
+	//const Font = `bold ${size}px Open Sans`;
+	//const Font = `800 ${size}px Montserrat`;
+	const Font = (size)=>`bold ${size}px calibri2`;
+
+
 	const getMaxSize = (lines, size=70)=>{
-		ctx.font = `800 ${size}px Montserrat`;
-		const biggest = Math.max(...lines.map((text)=>ctx.measureText(text).width))
-		if(biggest >= WIDTH) return size;
-		return getMaxSize(lines, size+1);
+		ctx.font = Font(size);
+		const biggest = Math.max(...lines.map((text)=>ctx.measureText(text).width));
+		if(biggest >= WIDTH-5) return size;
+		return getMaxSize(lines, size+2);
 	};
 
 	const canvas = React.useRef(null);
 	const [ctx, setCtx] = React.useState(null);
-	React.useEffect(()=>{canvas.current && setCtx(canvas.current.getContext('2d'))}, [canvas]);
 
+	React.useEffect(()=>{canvas.current && setCtx(canvas.current.getContext('2d'))}, [canvas]);
 	React.useEffect(()=>{ctx && text && setSize(getMaxSize(text.split('\n')))}, [text]);
 
 	if(ctx){
 		ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
 
-		//ctx.font = `bold ${size}px Ubuntu, 'Roboto Condensed',Roboto,Verdana,Arial, sans serif`;
-		//ctx.font = `bold ${size}px Roboto, Comic sans`;
-		//ctx.font = `bold ${size}px Calibri`;
-		//ctx.font = `bold ${size}px Open Sans`;
-		ctx.font = `800 ${size}px Montserrat`;
+		ctx.font = Font(size);
 		ctx.fillStyle = '#000';
 		ctx.textBaseline='middle';
 

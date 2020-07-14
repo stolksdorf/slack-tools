@@ -1,5 +1,9 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.main = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({"C:\\root\\Programming\\Javascript\\slack-tools\\client\\main\\main.jsx":[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.main = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+},{}],"C:\\root\\Programming\\Javascript\\slack-tools\\client\\main\\main.jsx":[function(require,module,exports){
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+require('./calibri2.less');
 
 require('./main.less');
 
@@ -46,7 +50,9 @@ function TextCanvas({
   }, [text]);
 
   if (ctx) {
-    ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
+    ctx.clearRect(0, 0, canvas.current.width, canvas.current.height); // ctx.fillStyle = 'rgba(255,255,255,0.6';
+    // ctx.fillRect(0, 0, canvas.current.width, canvas.current.height);
+
     ctx.font = Font(size);
     ctx.fillStyle = '#000';
     ctx.textBaseline = 'middle';
@@ -58,14 +64,7 @@ function TextCanvas({
       ctx.shadowColor = "rgba(255,255,255)";
       ctx.shadowBlur = 80;
       ctx.fillText(line, width, height);
-    }); //draw smol shadow
-    // lines.map((line, idx)=>{
-    // 	const width = (WIDTH - ctx.measureText(line).width)/2;
-    // 	const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
-    // 	ctx.shadowColor = "rgba(255,255,255)"
-    // 	ctx.shadowBlur = 20;
-    // 	ctx.fillText(line,width, height);
-    // });
+    }); // Draw outline
 
     lines.map((line, idx) => {
       const width = (WIDTH - ctx.measureText(line).width) / 2;
@@ -223,9 +222,9 @@ function Main(_ref) {
 
 ;
 module.exports = Main;
-},{"../../package.json":3,"./main.less":1,"./text.transforms.js":2,"react":undefined,"vitreum/headtags":undefined}],1:[function(require,module,exports){
-
-},{}],2:[function(require,module,exports){
+},{"../../package.json":4,"./calibri2.less":1,"./main.less":2,"./text.transforms.js":3,"react":undefined,"vitreum/headtags":undefined}],2:[function(require,module,exports){
+arguments[4][1][0].apply(exports,arguments)
+},{"dup":1}],3:[function(require,module,exports){
 const runes = require('runes');
 
 const core = `0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM\`-=[]\\;',./~_+{}|:"<>?!@#$%^&*()`;
@@ -315,7 +314,7 @@ module.exports = {
   genji,
   greek
 };
-},{"runes":undefined}],3:[function(require,module,exports){
+},{"runes":undefined}],4:[function(require,module,exports){
 module.exports=module.exports={
   "name": "slack-tools",
   "version": "1.1.1",

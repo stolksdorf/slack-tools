@@ -1,3 +1,4 @@
+require('./calibri2.less');
 require('./main.less');
 const React = require('react');
 
@@ -36,6 +37,10 @@ function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 	if(ctx){
 		ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
 
+		// ctx.fillStyle = 'rgba(255,255,255,0.6';
+		// ctx.fillRect(0, 0, canvas.current.width, canvas.current.height);
+
+
 		ctx.font = Font(size);
 		ctx.fillStyle = '#000';
 		ctx.textBaseline='middle';
@@ -53,20 +58,8 @@ function TextCanvas({text, size, lineheight, setDataURL, setSize}){
 			ctx.fillText(line,width, height);
 		});
 
-		//draw smol shadow
-		// lines.map((line, idx)=>{
-		// 	const width = (WIDTH - ctx.measureText(line).width)/2;
-		// 	const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;
 
-		// 	ctx.shadowColor = "rgba(255,255,255)"
-		// 	ctx.shadowBlur = 20;
-		// 	ctx.fillText(line,width, height);
-		// });
-
-
-
-
-
+		// Draw outline
 		lines.map((line, idx)=>{
 			const width = (WIDTH - ctx.measureText(line).width)/2;
 			const height = HEIGHT/2 - ((lines.length-1)*lineheight/2) + idx*lineheight;

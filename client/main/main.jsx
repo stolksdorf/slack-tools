@@ -125,7 +125,7 @@ const {Favicon} = require('vitreum/headtags');
 
 function EmojiMaker(props){
 
-	const [text, setText] = React.useState('Yes');
+	const [text, setText] = React.useState('');
 	const [size, setSize] = React.useState(110);
 	const [lineheight, setLineheight] = React.useState(60);
 
@@ -182,7 +182,7 @@ function EmojiMaker(props){
 
 const transforms = require('./text.transforms.js');
 function TextTransform(props){
-	const [text, setText] = React.useState('oh Hello');
+	const [text, setText] = React.useState('dunk');
 
 	return <div className='TextTransform'>
 		<h2>Text Transform</h2>
